@@ -593,10 +593,12 @@ module Google
         # @!group Data
         #
         def query_job query, priority: "INTERACTIVE", cache: true, table: nil,
-                      create: nil, write: nil, large_results: nil, flatten: nil
+                      create: nil, write: nil, large_results: nil, flatten: nil,
+                      use_legacy_sql: true
           options = { priority: priority, cache: cache, table: table,
                       create: create, write: write,
-                      large_results: large_results, flatten: flatten }
+                      large_results: large_results, flatten: flatten,
+                      use_legacy_sql: use_legacy_sql }
           options[:dataset] ||= self
           ensure_service!
           gapi = service.query_job query, options
