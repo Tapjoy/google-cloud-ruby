@@ -374,7 +374,7 @@ module Google
         def data max: nil, timeout: 10000, cache: true, dryrun: nil
           sql = "SELECT * FROM #{query_id}"
           ensure_service!
-          options = { max: max, timeout: timeout, cache: cache, dryrun: dryrun }
+          options = { max: max, timeout: timeout, cache: cache, dryrun: dryrun, use_legacy_sql: true }
           gapi = service.query sql, options
           QueryData.from_gapi gapi, service
         end
