@@ -413,7 +413,8 @@ module Google
             default_dataset: dataset_config,
             timeout_ms: options[:timeout],
             dry_run: options[:dryrun],
-            use_query_cache: options[:cache]
+            use_query_cache: options[:cache],
+            use_legacy_sql: options[:use_legacy_sql]
           )
         end
 
