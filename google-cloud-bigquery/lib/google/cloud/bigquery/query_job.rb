@@ -99,6 +99,14 @@ module Google
         end
 
         ##
+        # Checks if the query job is using legacy SQL.
+        def use_legacy_sql?
+          value = config['query']['useLegacySql']
+          return true if value.nil?
+          value
+        end
+
+        ##
         # Retrieves the query results for the job.
         #
         # @param [String] token Page token, returned by a previous call,
